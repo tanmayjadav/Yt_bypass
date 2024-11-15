@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 
 const PlaylistForm = () => {
-  const server = "http://localhost:5000";
+  const server = "https://yt-bypass.onrender.com";
   const [playlistUrl, setPlaylistUrl] = useState('');
   const [videos, setVideos] = useState([]);
 
