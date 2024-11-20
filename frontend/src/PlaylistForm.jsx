@@ -40,6 +40,7 @@ const PlaylistForm = () => {
   const fetchContent = async (url = playlistUrl) => {
     let playlistId = new URL(url).searchParams.get("list");
     let videoId = new URL(url).searchParams.get("v");
+    let liveId = new URL(url).searchParams.get("live");
 
      if (playlistId) {
       setIsVideo(false);
@@ -52,7 +53,7 @@ const PlaylistForm = () => {
         console.error("Error fetching playlist:", error);
       }
     } 
-    else if (videoId) {
+    else if (videoId || liveId) {
       setIsVideo(true);
       updateRecentLinks(url);
       try {
